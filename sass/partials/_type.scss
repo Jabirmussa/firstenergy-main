@@ -1,0 +1,127 @@
+h1, h2, h3, h4{
+    font-family: $font-family-default;
+    line-height: 1;
+    font-weight: 700;
+    color: $color-black;
+    margin-bottom: rem(35px);
+}
+
+h1{
+    font-size: rem(30px);
+    @include breakpoint-desktop-small{
+        font-size: rem(50px);
+    }
+}
+
+h2{
+    font-size: rem(34px);
+    @include breakpoint-tablet {
+        font-size: rem(40px);
+    }
+}
+
+h3{
+    font-size: rem(30px); 
+    margin-bottom: 20px;
+    @include breakpoint-desktop-small{
+        font-size: rem(36px);
+    }
+}
+
+h4{
+    font-size: rem(26px);
+    @include breakpoint-desktop-small{
+        font-size: rem(32px);
+    }
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+p{
+    margin-bottom: rem(35px);
+    line-height: 24px;
+}
+
+.text-container {
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(7);
+    }
+    max-width: rem(650px);
+    ul, ol,
+    blockquote,
+    .embed-container,
+    .wp-caption {
+        font-size: 16px;
+        line-height: rem(24px);
+        margin-bottom: rem(25px);
+        max-width: 100%;
+        @include breakpoint-desktop-small{
+            font-size: 24px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul, ol {
+        position: relative;
+        list-style: none;
+
+        li:not(.gfield) {
+            padding-left: 1.25em;
+
+            &::before {
+                position: absolute;
+                text-indent: -1.25em;
+            }
+        }
+    }
+
+    ul {
+        li:not(.gfield) {
+            &::before {
+                content: '•';
+            }
+        }
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    ol {
+        counter-reset: ol-counter;
+
+        li {
+            counter-increment: ol-counter;
+
+            &::before {
+                content: counter(ol-counter) '.';
+            }
+        }
+    }
+    blockquote {
+        padding-left: 37px;
+        font-size: 36px;
+        line-height: 1.2;
+        border-left: .1rem solid currentColor;
+    }
+    p:has(img){
+        margin: 30px 0;
+        @include breakpoint-tablet{
+            margin: 77px 0;
+        }
+        >img{
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+            @include breakpoint-tablet{
+                height: 372px;
+            }
+        }
+    }
+}

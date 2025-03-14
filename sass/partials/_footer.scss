@@ -1,0 +1,65 @@
+footer{
+    position: relative;
+    .wrapper{
+        div{
+            @include grid-column-span(4);
+            @include breakpoint-tablet{
+                &:nth-child(1){
+                    @include grid-column-span(3);
+                    @include grid-column-start(1);
+                }
+                &:nth-child(2){
+                    @include grid-column-span(2);
+                    @include grid-column-start(5);
+                }
+                &:nth-child(3){  
+                    @include grid-column-span(2);
+                    @include grid-column-start(8);
+                }
+                &:nth-child(4){  
+                    @include grid-column-span(2);
+                    @include grid-column-start(11);
+                }
+            }
+            @include breakpoint-desktop-small{
+                // &:nth-child(2){
+                //     margin-left: 47px;
+                // }
+            }
+            li{
+                padding-left: 0!important;
+                a{
+                    &:hover{
+                        color: $color-orange;
+                    }
+                }
+            }
+        }
+        h2, h3, h4, p, a{
+            color: $color-white ;
+            margin: 0;
+        }
+        h2, h3, h4{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+    }
+}
+.footer-content{
+    background: $color-darkblue;
+  
+}
+.footer-copyright{
+    background-color: $color-white;
+    padding: 30px 0;
+    p{
+     color: $color-black !important;
+       text-align: center;
+        @include grid-column-span(4);
+        margin: 0;
+        @include breakpoint-tablet{
+            @include grid-column-start(5);
+            text-align: left;
+        }
+    }
+}

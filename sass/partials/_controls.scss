@@ -1,0 +1,64 @@
+%control-properties {
+    position: relative;
+    font-family: $font-family-button;
+    font-size: rem(16px);
+    font-weight: normal;
+    display: inline-block;
+    color: $color-white;
+    background-color: $color-orange;
+    cursor: pointer;
+    padding: rem(15px) rem(30px) rem(17px) rem(30px);
+    text-decoration: none;
+    line-height: 1;
+    overflow: hidden;
+    z-index: 1;
+}
+
+%focus-properties {
+    color: $color-white;
+    // background-color: $color-darkblue;
+}
+
+.btn-center{
+    text-align: center;
+}
+.btn::before{
+    background-color: #96410D;
+}
+.btn::after{
+    background-color: $color-darkblue;
+}
+.btn:before, .btn:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 100%;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: transform .3s cubic-bezier(.75,0,.125,1);
+}
+.btn:hover:after {
+    transition-duration: .38s;
+    transition-delay: .08s;
+}
+
+.btn:hover:before, .btn:hover:after {
+    transform: translate3d(100%, 0, 0);
+}
+
+.btn {
+    transition: all 0.2s ease-in-out;
+    @extend %control-properties;
+}
+
+.btn-blue{
+    background-color: $color-darkblue;
+    &::before{
+        background-color: #96410D;
+    }
+    &::after{
+        background-color: $color-orange;
+    }
+}

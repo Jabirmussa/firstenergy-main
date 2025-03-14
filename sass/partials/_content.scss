@@ -1,0 +1,295 @@
+.hero{
+    position: relative;
+    height: 500px;
+    @include breakpoint-tablet{
+        height: 660px;
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+
+    .wrapper{
+        z-index: 1;
+        height: 100%;
+        row-gap: 0;         
+        h1{
+            color: $color-white;
+        }
+        .hero-text{
+            @include grid-column-start(1);
+            @include grid-column-span(4);
+            @include breakpoint-tablet{
+                @include grid-column-start(1);
+                @include grid-column-span(7);
+            }
+            align-self: end;
+            padding-bottom: 30px;
+            @include breakpoint-tablet{
+                padding-bottom: 80px;
+            }
+        }
+    }
+}
+.hero-image{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &::before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(255,255,255);
+        background: linear-gradient(136deg, rgba(255,255,255,0) 1%, rgba(0,0,0,0.4738270308123249) 76%);
+        z-index: 1;
+    }
+}
+
+
+// Services
+.services{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+    .btn-container{
+        text-align: center;
+        @include grid-column-span(4);
+        @include breakpoint-tablet{
+            @include grid-column-span(12);
+        }
+    }
+}
+.services-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(12);
+        @include grid-layout(12);
+    }
+    h2{
+        @include grid-column-span(6);
+        @include breakpoint-desktop-small {
+            font-size: 50px;
+            letter-spacing: -1px;
+        }
+    }
+    p{
+        @include grid-column-start(8);
+        @include grid-column-span(5);
+    }
+}
+.services-items{
+    @include grid-column-span(4);
+    @include grid-layout(4);
+    @include breakpoint-tablet{
+        margin-bottom: 30px;
+        @include grid-column-span(12);
+        @include grid-layout(12);
+    }
+}
+.service-item{
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    height: 430px;
+    padding: 35px;
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(6);
+    }
+    @include breakpoint-desktop-small{
+        @include grid-column-span(4);
+    }
+    display: flex;
+    align-items: end;
+    &::before{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+        z-index: 1;
+    }
+    h3{
+        position: relative;
+        color: $color-white;
+        z-index: 2;
+        font-size: 26px;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+    .item-image{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        .item-image {
+            transform: scale(1.05); 
+        }
+    }
+    
+}
+.services-display{
+    display: none;
+}
+// cta
+
+.cta{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+}
+.cta-text{
+    align-self: center;
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(5);
+    }
+}
+.cta-image{
+    @include grid-column-span(4);
+    min-height: 320px;
+    @include breakpoint-tablet{
+        height: 490px;
+        @include grid-column-start(7);
+        @include grid-column-span(5);
+    }
+}
+// header-image
+.header-image{
+    position: relative;
+    min-height: 300px;
+    @include breakpoint-tablet{
+        min-height: 430px;
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, $color-black, $color-white);
+        opacity: 0.5;
+        mix-blend-mode: multiply;
+        z-index: 1;
+    }
+}
+.header-text{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 30px;
+    @include breakpoint-tablet{
+        padding-bottom: 45px;
+    }
+    .wrapper{
+            row-gap: 0;            
+        h1{
+            color: $color-white;
+            @include grid-column-start(1);
+            @include grid-column-span(4);
+            @include breakpoint-tablet{
+                @include grid-column-start(1);
+                @include grid-column-span(7);
+            }
+        }
+    }
+}
+
+// Mission Vision
+.mission-vision{
+    background-color: #E4E4E4;
+}
+
+.mission-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(5);
+    }
+}
+.vision-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-start(7);
+        @include grid-column-span(5);
+    }
+}
+
+// Contact
+.contact{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }            
+}
+
+.contact-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(7);
+    }
+}
+.sidebar{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-start(9);
+        @include grid-column-span(5);
+    }
+}
