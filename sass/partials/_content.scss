@@ -81,6 +81,7 @@
 .services-text{
     @include grid-column-span(4);
     @include breakpoint-tablet{
+        margin-bottom: 20px;
         @include grid-column-span(12);
         @include grid-layout(12);
     }
@@ -185,7 +186,7 @@
 }
 .cta-image{
     @include grid-column-span(4);
-    min-height: 320px;
+    min-height: 300px;
     @include breakpoint-tablet{
         @include grid-column-start(7);
         @include grid-column-span(5);

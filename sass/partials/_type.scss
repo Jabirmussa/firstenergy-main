@@ -51,6 +51,9 @@ p{
 .text-container {
     @include grid-column-span(4);
     @include breakpoint-tablet{
+        @include grid-column-span(10);
+    }
+    @include breakpoint-desktop-small {
         @include grid-column-span(7);
     }
     max-width: rem(650px);
