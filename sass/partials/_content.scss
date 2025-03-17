@@ -109,7 +109,7 @@
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    height: 430px;
+    aspect-ratio: 1 / 1.17;
     padding: 35px;
     @include grid-column-span(4);
     @include breakpoint-tablet{
@@ -135,9 +135,12 @@
         position: relative;
         color: $color-white;
         z-index: 2;
-        font-size: 26px;
+        font-size: 20px;
         font-weight: normal;
         margin-bottom: 0;
+        @include breakpoint-tablet {
+            font-size: 26px;
+        }
     }
     .item-image{
         position: absolute;
@@ -153,8 +156,8 @@
             transform: scale(1.05); 
         }
     }
-    
 }
+
 .services-display{
     display: none;
 }
@@ -184,9 +187,11 @@
     @include grid-column-span(4);
     min-height: 320px;
     @include breakpoint-tablet{
-        height: 490px;
         @include grid-column-start(7);
         @include grid-column-span(5);
+    }
+    @include breakpoint-desktop-small {
+        height: 490px;
     }
 }
 // header-image
