@@ -95,7 +95,7 @@ p{
         }
     }
     p{
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
     ol {
         counter-reset: ol-counter;
@@ -117,7 +117,7 @@ p{
     p:has(img){
         margin: 30px 0;
         @include breakpoint-tablet{
-            margin: 77px 0;
+            margin: 44px 0;
         }
         >img{
             object-fit: cover;
