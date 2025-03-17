@@ -293,6 +293,12 @@
 }
 .sidebar{
     @include grid-column-span(4);
+    p{
+        margin: 0;
+    }
+    h2{
+        font-size: 32px;
+    }
     @include breakpoint-tablet{
         @include grid-column-start(9);
         @include grid-column-span(5);
